@@ -14,13 +14,13 @@ return function(ns_id)
 
     vim.g.terminal_color_0 = bg.w1
     vim.g.terminal_color_1 = fg.r3
-    vim.g.terminal_color_2 = fg.g2
-    vim.g.terminal_color_3 = fg.y2
-    vim.g.terminal_color_4 = fg.b2
-    vim.g.terminal_color_5 = fg.p3
-    vim.g.terminal_color_6 = fg.e2
+    vim.g.terminal_color_2 = fg.g4
+    vim.g.terminal_color_3 = fg.y4
+    vim.g.terminal_color_4 = fg.b5
+    vim.g.terminal_color_5 = fg.p5
+    vim.g.terminal_color_6 = fg.e4
     vim.g.terminal_color_7 = fg.w3
-    vim.g.terminal_color_8 = bg.w4
+    vim.g.terminal_color_8 = fg.w5
     vim.g.terminal_color_9 = fg.r3
     vim.g.terminal_color_10 = fg.g1
     vim.g.terminal_color_11 = fg.y1

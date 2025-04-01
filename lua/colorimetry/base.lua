@@ -1,6 +1,10 @@
 -- Default highlight groups of Neovim
 
-return function(ns_id)
+return function(ns_id, offset)
+    if offset == nil then
+        offset = 0
+    end
+
     ---@param name string
     local function sethl(name)
         ---@param val vim.api.keyset.highlight
@@ -41,13 +45,16 @@ return function(ns_id)
     sethl("NonText") { fg = fg.w4, bg = bg.w2 }
     sethl("SpecialKey") { fg = fg.w4, bg = bg.w2 }
 
-    sethl("NormalFloat") { fg = fg.w0, bg = bg.b3 }
+    sethl("NormalFloat") { fg = fg.w0, bg = bg.w2 }
     sethl("FloatBorder") { link = "WinSeparator" }
     sethl("FloatTitle") { bold = true }
     sethl("FloatFooter") { italic = true }
     sethl("PmenuSel") { bg = bg.g4 }
     sethl("Question") { fg = fg.o2 }
     sethl("QuickfixLine") { fg = fg.e3 }
+
+    sethl("WinBar") { bg = bg.r4 }
+    sethl("WinBarNC") { bg = "NONE" }
 
     sethl("Search") { bg = bg.b4 }
     sethl("CurSearch") { bg = bg.b4, bold = true }
@@ -57,10 +64,13 @@ return function(ns_id)
     sethl("SpellCap") { undercurl = true, sp = fg.b3 }
     sethl("SpellLocal") { undercurl = true, sp = fg.g3 }
     sethl("SpellRare") { undercurl = true, sp = fg.y3 }
-    sethl("StatusLine") { reverse = true }
+    sethl("StatusLine") { link = "WinSeparator" }
+    sethl("StatusLineNC") { link = "WinSeparator" }
     sethl("Visual") { bg = bg.p4 }
     sethl("WarningMsg") { fg = fg.y1 }
     sethl("Whitespace") { fg = fg.v5 }
+
+    sethl("@winbar.reset") { bg = "NONE" }
 
     sethl("@attribute") { fg = fg.o0 }
     sethl("@attribute.builtin") { fg = fg.o2 }
@@ -69,7 +79,7 @@ return function(ns_id)
     sethl("@character.special") { fg = fg.y3 }
     sethl("@comment") { fg = fg.w4 }
     sethl("@comment.documentation") { fg = fg.w2 }
-    sethl("@conditional") {}
+    sethl("@conditional") { link = "@keyword" }
     sethl("@constant") { fg = fg.p1 }
     sethl("@constant.builtin") { fg = fg.p3 }
     sethl("@constant.macro") {}
@@ -99,12 +109,12 @@ return function(ns_id)
     sethl("@operator") { fg = fg.v1 }
     sethl("@parameter") { fg = fg.b0 }
     sethl("@preproc") {}
-    sethl("@property") { fg = fg.w1 }
+    sethl("@property") { fg = fg.b0 }
     sethl("@punctuation") { fg = fg.o3 }
     sethl("@punctuation.delimiter") { fg = fg.o4 }
     sethl("@punctuation.bracket") { fg = fg.o3 }
     sethl("@punctuation.special") { fg = fg.o3 }
-    sethl("@repeat") {}
+    sethl("@repeat") { link = "@keyword" }
     sethl("@storageclass") {}
     sethl("@string") { fg = fg.g2 }
     sethl("@string.field") { fg = fg.g1 }
@@ -112,7 +122,7 @@ return function(ns_id)
     sethl("@string.regexp") { fg = fg.g3 }
     sethl("@string.escape") { fg = fg.e4 }
     sethl("@string.documentation") { fg = fg.g0 }
-    sethl("@symbol") {}
+    sethl("@symbol") { link = "@property" }
     sethl("@tag") { fg = fg.o0 }
     sethl("@tag.attribute") { fg = fg.o0 }
     sethl("@tag.delimiter") { fg = fg.o4 }
