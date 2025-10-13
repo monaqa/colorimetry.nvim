@@ -13,150 +13,150 @@ return function(ns_id, offset)
         end
     end
 
-    local fg = require("colorimetry.palette").fg
-    local bg = require("colorimetry.palette").bg
+    local fg = require("colorimetry.palette.dark").fg
+    local bg = require("colorimetry.palette.dark").bg
 
     sethl("Normal") { fg = fg.w0 }
 
-    sethl("ColorColumn") { bg = bg.w2 }
-    sethl("Conceal") { fg = fg.w3 }
+    sethl("ColorColumn") { bg = bg.w5 }
+    sethl("Conceal") { fg = fg.w6 }
     sethl("Cursor") { reverse = true }
-    sethl("CursorColumn") { bg = bg.w3 }
+    sethl("CursorColumn") { bg = bg.w75 }
     sethl("CursorLine") { link = "CursorColumn" }
-    sethl("Directory") { fg = fg.g2 }
-    sethl("DiffAdd") { bg = bg.g1 }
-    sethl("DiffChange") { bg = bg.b1 }
-    sethl("DiffDelete") { bg = bg.r1 }
-    sethl("DiffText") { bg = bg.b2 }
+    sethl("Directory") { fg = fg.g4 }
+    sethl("DiffAdd") { bg = bg.g25 }
+    sethl("DiffChange") { bg = bg.b25 }
+    sethl("DiffDelete") { bg = bg.r25 }
+    sethl("DiffText") { bg = bg.b5 }
     sethl("EndOfBuffer") {}
     sethl("TermCursor") { reverse = true }
-    sethl("ErrorMsg") { fg = fg.r4 }
-    sethl("WinSeparator") { fg = fg.w2 }
-    sethl("Folded") { fg = fg.v1 }
-    sethl("FoldColumn") { bg = bg.w1, fg = fg.w4 }
-    sethl("SignColumn") { bg = bg.w1, fg = fg.w4 }
-    sethl("Substitute") { bg = bg.b2 }
+    sethl("ErrorMsg") { fg = fg.r8 }
+    sethl("WinSeparator") { fg = fg.w4 }
+    sethl("Folded") { fg = fg.v2 }
+    sethl("FoldColumn") { bg = bg.w25, fg = fg.w8 }
+    sethl("SignColumn") { bg = bg.w25, fg = fg.w8 }
+    sethl("Substitute") { bg = bg.b5 }
 
-    sethl("LineNr") { bg = bg.w1 }
-    sethl("CursorLineNr") { bg = bg.w1, bold = true }
-    sethl("MatchParen") { bg = bg.p4, bold = true }
+    sethl("LineNr") { bg = bg.w25 }
+    sethl("CursorLineNr") { bg = bg.w25, bold = true }
+    sethl("MatchParen") { bg = bg.p8, bold = true }
     sethl("ModeMsg") { bold = true }
-    sethl("MoreMsg") { fg = fg.b2 }
-    sethl("NonText") { fg = fg.w4, bg = bg.w2 }
-    sethl("SpecialKey") { fg = fg.w4, bg = bg.w2 }
+    sethl("MoreMsg") { fg = fg.b4 }
+    sethl("NonText") { fg = fg.w8, bg = bg.w5 }
+    sethl("SpecialKey") { fg = fg.w8, bg = bg.w5 }
 
-    sethl("NormalFloat") { fg = fg.w0, bg = bg.w2 }
+    sethl("NormalFloat") { fg = fg.w0, bg = bg.w5 }
     sethl("FloatBorder") { link = "WinSeparator" }
     sethl("FloatTitle") { bold = true }
     sethl("FloatFooter") { italic = true }
-    sethl("PmenuSel") { bg = bg.g4 }
-    sethl("Question") { fg = fg.o2 }
-    sethl("QuickfixLine") { fg = fg.e3 }
+    sethl("PmenuSel") { bg = bg.g }
+    sethl("Question") { fg = fg.o }
+    sethl("QuickfixLine") { fg = fg.e6 }
 
-    sethl("WinBar") { bg = bg.r4 }
+    sethl("WinBar") { bg = bg.r }
     sethl("WinBarNC") { bg = "NONE" }
 
-    sethl("Search") { bg = bg.b4 }
-    sethl("CurSearch") { bg = bg.b4, bold = true }
-    sethl("IncSearch") { bg = bg.b3 }
+    sethl("Search") { bg = bg.b }
+    sethl("CurSearch") { bg = bg.b, bold = true }
+    sethl("IncSearch") { bg = bg.b75 }
 
-    sethl("SpellBad") { undercurl = true, sp = fg.r3 }
-    sethl("SpellCap") { undercurl = true, sp = fg.b3 }
-    sethl("SpellLocal") { undercurl = true, sp = fg.g3 }
-    sethl("SpellRare") { undercurl = true, sp = fg.y3 }
+    sethl("SpellBad") { undercurl = true, sp = fg.r6 }
+    sethl("SpellCap") { undercurl = true, sp = fg.b6 }
+    sethl("SpellLocal") { undercurl = true, sp = fg.g6 }
+    sethl("SpellRare") { undercurl = true, sp = fg.y6 }
     sethl("StatusLine") { link = "WinSeparator" }
     sethl("StatusLineNC") { link = "WinSeparator" }
-    sethl("Visual") { bg = bg.p4 }
-    sethl("WarningMsg") { fg = fg.y1 }
-    sethl("Whitespace") { fg = fg.v5 }
+    sethl("Visual") { bg = bg.p }
+    sethl("WarningMsg") { fg = fg.y2 }
+    sethl("Whitespace") { fg = fg.v }
 
     sethl("@winbar.reset") { bg = "NONE" }
 
     sethl("@attribute") { fg = fg.o0 }
-    sethl("@attribute.builtin") { fg = fg.o2 }
-    sethl("@boolean") { fg = fg.p2 }
-    sethl("@character") { fg = fg.y2 }
-    sethl("@character.special") { fg = fg.y3 }
-    sethl("@comment") { fg = fg.w4 }
-    sethl("@comment.documentation") { fg = fg.w2 }
+    sethl("@attribute.builtin") { fg = fg.o4 }
+    sethl("@boolean") { fg = fg.p4 }
+    sethl("@character") { fg = fg.y4 }
+    sethl("@character.special") { fg = fg.y6 }
+    sethl("@comment") { fg = fg.w8 }
+    sethl("@comment.documentation") { fg = fg.w4 }
     sethl("@conditional") { link = "@keyword" }
-    sethl("@constant") { fg = fg.p1 }
-    sethl("@constant.builtin") { fg = fg.p3 }
+    sethl("@constant") { fg = fg.p2 }
+    sethl("@constant.builtin") { fg = fg.p6 }
     sethl("@constant.macro") {}
     sethl("@constructor") {}
     sethl("@debug") {}
     sethl("@define") {}
     sethl("@exception") {}
     sethl("@float") {}
-    sethl("@function") { fg = fg.e2 }
-    sethl("@function.method") { fg = fg.e1 }
-    sethl("@function.builtin") { fg = fg.e3 }
-    sethl("@function.call") { fg = fg.e1 }
-    sethl("@function.macro") { fg = fg.e2 }
+    sethl("@function") { fg = fg.e4 }
+    sethl("@function.method") { fg = fg.e2 }
+    sethl("@function.builtin") { fg = fg.e6 }
+    sethl("@function.call") { fg = fg.e2 }
+    sethl("@function.macro") { fg = fg.e4 }
     sethl("@include") {}
-    sethl("@keyword") { fg = fg.y1 }
-    sethl("@label") { fg = fg.v2 }
-    sethl("@markup.raw") { fg = fg.g1 }
-    sethl("@markup.heading") { fg = fg.y1, bold = true }
-    sethl("@markup.heading.weak") { fg = fg.y2 }
+    sethl("@keyword") { fg = fg.y2 }
+    sethl("@label") { fg = fg.v4 }
+    sethl("@markup.raw") { fg = fg.g2 }
+    sethl("@markup.heading") { fg = fg.y2, bold = true }
+    sethl("@markup.heading.weak") { fg = fg.y4 }
     sethl("@method") {}
     sethl("@method.call") {}
-    sethl("@module") { fg = fg.o1 }
+    sethl("@module") { fg = fg.o2 }
     sethl("@namespace") {}
     sethl("@none") { bg = "NONE", fg = "NONE" }
-    sethl("@number") { fg = fg.p2 }
-    sethl("@number.float") { fg = fg.p2 }
-    sethl("@operator") { fg = fg.v1 }
+    sethl("@number") { fg = fg.p4 }
+    sethl("@number.float") { fg = fg.p4 }
+    sethl("@operator") { fg = fg.v2 }
     sethl("@parameter") { fg = fg.b0 }
     sethl("@preproc") {}
     sethl("@property") { fg = fg.b0 }
-    sethl("@punctuation") { fg = fg.o3 }
-    sethl("@punctuation.delimiter") { fg = fg.o4 }
-    sethl("@punctuation.bracket") { fg = fg.o3 }
-    sethl("@punctuation.special") { fg = fg.o3 }
+    sethl("@punctuation") { fg = fg.o6 }
+    sethl("@punctuation.delimiter") { fg = fg.o8 }
+    sethl("@punctuation.bracket") { fg = fg.o6 }
+    sethl("@punctuation.special") { fg = fg.o6 }
     sethl("@repeat") { link = "@keyword" }
     sethl("@storageclass") {}
-    sethl("@string") { fg = fg.g2 }
-    sethl("@string.field") { fg = fg.g1 }
-    sethl("@string.special") { fg = fg.g3 }
-    sethl("@string.regexp") { fg = fg.g3 }
-    sethl("@string.escape") { fg = fg.e4 }
+    sethl("@string") { fg = fg.g4 }
+    sethl("@string.field") { fg = fg.g2 }
+    sethl("@string.special") { fg = fg.g6 }
+    sethl("@string.regexp") { fg = fg.g6 }
+    sethl("@string.escape") { fg = fg.e8 }
     sethl("@string.documentation") { fg = fg.g0 }
     sethl("@symbol") { link = "@property" }
     sethl("@tag") { fg = fg.o0 }
     sethl("@tag.attribute") { fg = fg.o0 }
-    sethl("@tag.delimiter") { fg = fg.o4 }
+    sethl("@tag.delimiter") { fg = fg.o8 }
     sethl("@text") {}
     sethl("@text.danger") {}
     sethl("@text.diff.add") { link = "DiffAdd" }
-    sethl("@text.diff.addsign") { fg = fg.g1, bold = true }
+    sethl("@text.diff.addsign") { fg = fg.g2, bold = true }
     sethl("@text.diff.change") { link = "DiffChange" }
     sethl("@text.diff.delete") { link = "DiffDelete" }
-    sethl("@text.diff.delsign") { fg = fg.r1, bold = true }
-    sethl("@text.diff.indicator") { bg = bg.w4 }
+    sethl("@text.diff.delsign") { fg = fg.r2, bold = true }
+    sethl("@text.diff.indicator") { bg = bg.w }
     sethl("@text.emphasis") { italic = true }
     sethl("@text.environment") {}
     sethl("@text.environment.name") {}
     sethl("@text.literal") { fg = fg.g0 }
     sethl("@text.math") {}
     sethl("@text.note") {}
-    sethl("@text.quote") { fg = fg.w2 }
+    sethl("@text.quote") { fg = fg.w4 }
     sethl("@text.reference") { fg = fg.b0 }
     sethl("@text.strike") { strikethrough = true }
     sethl("@text.strong") { bold = true }
-    sethl("@text.title") { fg = fg.y1, bold = true }
+    sethl("@text.title") { fg = fg.y2, bold = true }
     sethl("@text.title.weak") { fg = fg.y0 }
     sethl("@text.todo") {}
     sethl("@text.underline") { underline = true }
-    sethl("@text.uri") { fg = fg.v3 }
+    sethl("@text.uri") { fg = fg.v6 }
     sethl("@text.warning") {}
-    sethl("@type") { fg = fg.b2 }
-    sethl("@type.builtin") { fg = fg.b3 }
+    sethl("@type") { fg = fg.b4 }
+    sethl("@type.builtin") { fg = fg.b6 }
     sethl("@type.definition") {}
     sethl("@type.qualifier") {}
     sethl("@variable") {}
     sethl("@variable.parameter") { fg = fg.b0 }
-    sethl("@variable.builtin") { fg = fg.v2 }
+    sethl("@variable.builtin") { fg = fg.v4 }
     sethl("@variable.member") {}
 
     sethl("Boolean") { link = "@boolean" }
