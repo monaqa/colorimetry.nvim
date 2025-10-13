@@ -1,6 +1,6 @@
--- color config of terminal window
-
-return function(ns_id)
+---@param fg colorimetry.Ground
+---@param bg colorimetry.Ground
+return function(ns_id, fg, bg)
     ---@param name string
     local function sethl(name)
         ---@param val vim.api.keyset.highlight
@@ -8,9 +8,6 @@ return function(ns_id)
             vim.api.nvim_set_hl(ns_id, name, val)
         end
     end
-
-    local fg = require("colorimetry.palette.dark").fg
-    local bg = require("colorimetry.palette.dark").bg
 
     vim.g.terminal_color_0 = bg.w1
     vim.g.terminal_color_1 = fg.r3

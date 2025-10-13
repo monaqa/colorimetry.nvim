@@ -1,18 +1,14 @@
 local M = {}
 
-function M.load(ns_id, offset)
-    if offset == nil then
-        offset = 0
-    end
+function M.load(ns_id, subscheme)
     if ns_id == nil then
         ns_id = 0
     end
+    if subscheme == nil then
+        subscheme = "dark"
+    end
 
-    require("colorimetry.base")(ns_id, offset)
-
-    require("colorimetry.extensions.gitsigns")(ns_id)
-    require("colorimetry.extensions.terminal")(ns_id)
-    require("colorimetry.extensions.filetype")(ns_id)
+    require("colorimetry.subscheme." .. subscheme).load(ns_id)
 end
 
 return M
